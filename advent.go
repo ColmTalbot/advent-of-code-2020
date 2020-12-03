@@ -9,10 +9,13 @@ import (
 func main() {
 	var days []func()
 	days = append(days, advent.Day1)
+	days = append(days, advent.Day2)
+
 	lineBreak := strings.Repeat("=", 20)
+
 	for ii, function := range days {
 		fmt.Println(lineBreak)
-		fmt.Println("Day ", ii+1)
+		fmt.Println("Day", ii+1)
 		fmt.Println(lineBreak)
 		function()
 	}
