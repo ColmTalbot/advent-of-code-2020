@@ -21,7 +21,7 @@ func main() {
 
 	lineBreak := strings.Repeat("=", 20)
 
-	start := 0
+	start := 1
 	end := len(days)
 	if len(os.Args) == 2 {
 		start, err = strconv.Atoi(os.Args[1])
