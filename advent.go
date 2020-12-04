@@ -17,6 +17,7 @@ func main() {
 	var err error
 	days = append(days, advent.Day1)
 	days = append(days, advent.Day2)
+	days = append(days, advent.Day3)
 
 	lineBreak := strings.Repeat("=", 20)
 
