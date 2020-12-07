@@ -2,22 +2,11 @@ package advent
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"regexp"
 	"strconv"
 	"strings"
 )
-
-func parsePassportFile(filename string) (passports []string) {
-	allPassports, err := ioutil.ReadFile(filename)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	passports = strings.Split(string(allPassports), "\n\n")
-	return
-}
 
 // Parse passport string to check if required fields are present
 // If any required fields are missing return 0
@@ -119,7 +108,7 @@ func assessPassportValidity(passport string) bool {
 }
 
 func findValidPassports(filename string, strict bool) (validPassports []string) {
-	passports := parsePassportFile(filename)
+	passports := parseSetOfLines(filename)
 	var condition func(string) bool
 	if strict {
 		condition = assessPassportValidity
