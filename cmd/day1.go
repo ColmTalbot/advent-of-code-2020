@@ -2,30 +2,7 @@ package advent
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
-	"strconv"
-	"strings"
 )
-
-// Read an array of integers from a file
-// The first argument is the file name
-// The second argument is the delimiter, e.g. "\n", ","
-func readIntFile(inputFile string, sep string) (numbers []int, err error) {
-	data, err := ioutil.ReadFile(inputFile)
-	if err != nil {
-		log.Println(err)
-	}
-	lines := strings.Split(string(data), sep)
-	numbers = make([]int, 0, len(lines))
-	for _, line := range lines {
-		if len(line) == 0 { continue }
-		n, err := strconv.Atoi(line)
-		if err != nil { return nil, err }
-		numbers = append(numbers, n)
-	}
-	return numbers, nil
-}
 
 // Find the first pair of elements which sum to 2020 and
 // return the product of those two numbers.
@@ -39,7 +16,6 @@ func findPairSum(data []int) int {
 	}
 	return -1
 }
-
 
 // Find the trio of elements which sum to 2020 and
 // return the product of those three numbers.
@@ -60,7 +36,9 @@ func findTrioSum(data []int) int {
 
 func performTasks(inputFile string) {
 	data, err := readIntFile(inputFile, "\n")
-	if err != nil {fmt.Println(err)}
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	fmt.Println("Part 1:", findPairSum(data))
 	fmt.Println("Part 2:", findTrioSum(data))
