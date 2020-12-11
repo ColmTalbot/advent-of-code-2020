@@ -24,6 +24,7 @@ func main() {
 	days = append(days, advent.Day7)
 	days = append(days, advent.Day8)
 	days = append(days, advent.Day9)
+	days = append(days, advent.Day10)
 
 	lineBreak := strings.Repeat("=", 20)
 
