@@ -57,3 +57,29 @@ func readIntFile(inputFile string, sep string) (numbers []int, err error) {
 	}
 	return numbers, nil
 }
+
+func AbsInt(input int) int {
+	if input < 0 {
+		return -input
+	} else {
+		return input
+	}
+}
+
+func gcd(input1 int, input2 int) int {
+	divisor := 1
+	if input1 == 0 {
+		return input2
+	}
+	if input2 == 0 {
+		return input1
+	}
+	ii := 1
+	for (ii <= input1) && (ii <= input2) {
+		if input1%ii == 0 && input2%ii == 0 {
+			divisor = ii
+		}
+		ii++
+	}
+	return divisor
+}

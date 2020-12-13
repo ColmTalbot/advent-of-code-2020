@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // Run the advent of code challenges for 2020.
@@ -26,8 +27,9 @@ func main() {
 	days = append(days, advent.Day9)
 	days = append(days, advent.Day10)
 	days = append(days, advent.Day11)
+	days = append(days, advent.Day12)
 
-	lineBreak := strings.Repeat("=", 20)
+	lineBreak := strings.Repeat("=", 30)
 
 	start := 1
 	end := len(days)
@@ -52,7 +54,11 @@ func main() {
 		fmt.Println(lineBreak)
 		fmt.Println("Day", ii+start)
 		fmt.Println(lineBreak)
+		startTime := time.Now()
 		function()
+		duration := time.Since(startTime)
+		fmt.Println(lineBreak)
+		fmt.Println("Evaluation time: ", duration)
 	}
 	fmt.Println(lineBreak)
 }
