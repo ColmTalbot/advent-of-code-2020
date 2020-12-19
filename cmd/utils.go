@@ -83,3 +83,11 @@ func gcd(input1 int, input2 int) int {
 	}
 	return divisor
 }
+
+func parseInt(input string, base int) (output int) {
+	temp, err := strconv.ParseInt(input, base, 64)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return int(temp)
+}
