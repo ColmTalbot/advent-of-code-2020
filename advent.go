@@ -34,6 +34,7 @@ func main() {
 	days = append(days, advent.Day16)
 	days = append(days, advent.Day17)
 	days = append(days, advent.Day18)
+	days = append(days, advent.Day19)
 	days = append(days, advent.Day21)
 	days = append(days, advent.Day22)
 	days = append(days, advent.Day23)
